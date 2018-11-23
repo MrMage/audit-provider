@@ -63,8 +63,8 @@ extension AuditEvent: Preparation {
         try database.create(self) {
             $0.id()
             $0.int("authorId")
-            $0.custom("eventTypeId", type: "TINYINT UNSIGNED")
-            $0.custom("severityTypeId", type: "TINYINT UNSIGNED")
+            $0.custom("eventTypeId", type: "SMALLINT")
+            $0.custom("severityTypeId", type: "SMALLINT")
             $0.string("message", length: 191)
         }
     }
